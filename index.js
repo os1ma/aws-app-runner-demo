@@ -16,18 +16,6 @@ app.get('/', (req, res) => {
   }, delaySec * 1000);
 });
 
-const server = app.listen(port, () => {
+app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
-});
-
-const signals = ['SIGTERM', 'SIGINT']
-
-signals.forEach((signal) => {
-  process.on(signal, () => {
-    console.log(`Received ${signal}...`);
-
-    setTimeout(() => {
-      server.close();
-    }, 3000);
-  });
 });
