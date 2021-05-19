@@ -1,17 +1,15 @@
 const express = require('express');
-const uuid = require('uuid');
 
 const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  const requestId = uuid.v4();
-  console.log(`[${requestId}] [request] path = ${req.path}`);
+  console.log('Receive request');
 
   const delaySec = req.query.delay || 0;
 
   setTimeout(() => {
-    console.log(`[${requestId}] [response]`);
+    console.log('Return response');
     res.send('Hello World!');
   }, delaySec * 1000);
 });
