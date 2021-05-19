@@ -3,7 +3,7 @@ runtime: nodejs12
 build:
   commands:
     build:
-      - npm install
+      - yarn install
 run:
   command: node index.js
   network:
