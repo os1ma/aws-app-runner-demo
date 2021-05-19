@@ -23,3 +23,7 @@ app.listen(port, () => {
 process.on('SIGTERM', () => {
   console.log('Received SIGTERM...');
 });
+
+process.on('SIGINT', () => {
+  console.log('Received SIGINT...');
+}
